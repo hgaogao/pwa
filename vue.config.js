@@ -1,7 +1,7 @@
 module.exports = {
     pwa: {
         name: "easy-front-vue-cli3",
-        themeColor: "#4DBA87",
+        themeColor: "#2f4053",
         msTileColor: "#000000",
         appleMobileWebAppCapable: "yes",
         appleMobileWebAppStatusBarStyle: "black",
