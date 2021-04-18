@@ -1,6 +1,7 @@
 <template>
   <div>
-    <van-button plain type="primary">{{msg}}</van-button>
+    <van-button  type="success">{{msg}}</van-button>
+
   </div>
 </template>
 

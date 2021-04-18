@@ -1,4 +1,5 @@
 module.exports = {
+    //配置pwa应用
     pwa: {
         name: "Leepool",
         themeColor: "#2f4053",
