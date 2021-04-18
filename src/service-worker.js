@@ -35,33 +35,33 @@ workbox.routing.registerRoute(
     })
 );
 
-// 缓存web的图片资源
-workbox.routing.registerRoute(
-    /\.(?:png|gif|jpg|jpeg|svg)$/,
-    new workbox.strategies.StaleWhileRevalidate({
-        cacheName: "images",
-        plugins: [
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 设置缓存有效期为30天
-            })
-        ]
-    })
-);
+// // 缓存web的图片资源
+// workbox.routing.registerRoute(
+//     /\.(?:png|gif|jpg|jpeg|svg)$/,
+//     new workbox.strategies.StaleWhileRevalidate({
+//         cacheName: "images",
+//         plugins: [
+//             new workbox.expiration.ExpirationPlugin({
+//                 maxEntries: 60,
+//                 maxAgeSeconds: 30 * 24 * 60 * 60 // 设置缓存有效期为30天
+//             })
+//         ]
+//     })
+// );
 
-// 我们很多资源在其他域名上，比如cdn、oss等，这里做单独处理，需要支持跨域
-workbox.routing.registerRoute(
-    /^https:\/\/cdn\.my\.com\/.*\.(jpe?g|png|gif|svg)/,
-    new workbox.strategies.StaleWhileRevalidate({
-        cacheName: "cdn-images",
-        plugins: [
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 60,
-                maxAgeSeconds: 5 * 24 * 60 * 60 // 设置缓存有效期为5天
-            })
-        ],
-        fetchOptions: {
-            credentials: "include" // 支持跨域
-        }
-    })
-);
+// // 我们很多资源在其他域名上，比如cdn、oss等，这里做单独处理，需要支持跨域
+// workbox.routing.registerRoute(
+//     /^https:\/\/cdn\.my\.com\/.*\.(jpe?g|png|gif|svg)/,
+//     new workbox.strategies.StaleWhileRevalidate({
+//         cacheName: "cdn-images",
+//         plugins: [
+//             new workbox.expiration.ExpirationPlugin({
+//                 maxEntries: 60,
+//                 maxAgeSeconds: 5 * 24 * 60 * 60 // 设置缓存有效期为5天
+//             })
+//         ],
+//         fetchOptions: {
+//             credentials: "include" // 支持跨域
+//         }
+//     })
+// );
