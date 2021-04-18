@@ -41,7 +41,7 @@ workbox.routing.registerRoute(
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: "images",
         plugins: [
-            new workbox.expiration.ExpirationPlugin({
+            new workbox.expiration.Plugin({
                 maxEntries: 60,
                 maxAgeSeconds: 30 * 24 * 60 * 60 // 设置缓存有效期为30天
             })
@@ -55,7 +55,7 @@ workbox.routing.registerRoute(
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: "cdn-images",
         plugins: [
-            new workbox.expiration.ExpirationPlugin({
+            new workbox.expiration.Plugin({
                 maxEntries: 60,
                 maxAgeSeconds: 5 * 24 * 60 * 60 // 设置缓存有效期为5天
             })
