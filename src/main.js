@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import { Button } from 'vant';
 import { Tabbar, TabbarItem } from 'vant';
+
 const app = createApp(App)
 
 app.use(store)
